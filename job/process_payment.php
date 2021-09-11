@@ -1,7 +1,4 @@
 <?php
-
-//header('Content-Type: application/json; charset=utf-8');
-
 if (!isset($_POST) || empty($_POST['id'])) {
     die("Post fail!");
 }
@@ -97,5 +94,4 @@ if (!$dataCurl->Error) {
     }
 }
 return false;
-
 ?>

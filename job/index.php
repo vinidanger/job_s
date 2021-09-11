@@ -1,5 +1,4 @@
 <?php
-
 require_once 'config.php';
 require_once 'func.php';
 
@@ -16,10 +15,7 @@ if (!$data) {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="content-language" content="pt-br">
     
-    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
-    
     <link rel="stylesheet" href="bs/css/bootstrap.css">
-    <!--<script src="bs/js/bootstrap.bundle.js"></script>-->
     <script src="bs/js/bootstrap.js"></script>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -35,15 +31,6 @@ if (!$data) {
                 // Clientes
                 $customers = executeData($data,'SELECT * FROM clientes');
                 $customers = $customers->fetchAll();
-                ?>
-                <!--
-                <div class="text-start">
-                    <pre>
-                    <?=print_r($customers);?>
-                    </pre>
-                </div>
-                -->
-                <?
                 
                 // Lista os pedidos que estão aguardando confirmação do pagamento
                 $order = executeData($data,'SELECT * FROM pedidos WHERE id_situacao = 1');
@@ -59,16 +46,6 @@ if (!$data) {
                             array_push($list_order_pay,$row);
                         }
                     }
-                    
-                    ?>
-                    <!--
-                    <div class="text-start">
-                        <pre>
-                        <?=print_r($list_order_pay);?>
-                        </pre>
-                    </div>
-                    -->
-                    <?
                     ?>
                     <div class="table-responsive">
                         <table class="table align-middle">
